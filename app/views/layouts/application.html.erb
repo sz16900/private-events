@@ -10,6 +10,32 @@
   </head>
 
   <body>
+  <nav class="navbar is-info">
+    <div class="navbar-brand">
+      <%= link_to root_path, class: "navbar-item" do %>
+        <h1 class="title is-5">Private Events</h1>
+      <% end %>
+    </div>
+
+    <div id="navbarExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <%= link_to 'New Event', '#', class: "button is-info is-inverted" %>
+          </p>
+          <p class="control">
+            <%= link_to 'Sign In', '#', class: "button is-info" %>
+          </p>
+          <p class="control">
+            <%= link_to 'Sign Up', new_user_path, class: "button is-info" %>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </nav>
     <%= yield %>
   </body>
 </html>
