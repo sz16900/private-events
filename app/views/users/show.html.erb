@@ -10,10 +10,10 @@
           <%= @user.email %>
         </h2>
 
-        <%= @user.events.each do |event| %>
-          <h3><% event.title %></h3>
-          <p><% event.date %></p>
-          <p><% event.description %></p>
+        <% @user.events.each do |event| %>
+          <h3><%= event.title %></h3>
+          <p><%= event.date %></p>
+          <p><%= event.description %></p>
         <% end %>
   </div>
 </div>

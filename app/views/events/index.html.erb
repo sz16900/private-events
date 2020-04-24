@@ -1,0 +1,14 @@
+<div class="section">
+    <div class="container">
+        <h1 class='title'>Show All Events<h1>
+
+        <h2><% @event.each do |event|%></h2>
+        <a href="<%= event_path(event.id) %>">
+            <p><%= event.title%> by <%= event.creator.name%></p>
+            <p><%= event.date%></p>
+        </a>
+        <br>
+        <br>
+        <%end%>
+    </div>
+</div>
