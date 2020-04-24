@@ -24,6 +24,15 @@
           <p class="control">
             <%= link_to 'New Event', '#', class: "button is-info is-inverted" %>
           </p>
+
+          <%# Try it %>
+          <% if signed_in? %>
+            <p class="control">
+              <%= link_to current_user.name, '#', class: "button is-info" %>
+            </p>
+          <% end %>
+          <%# END  %>
+          
           <p class="control">
             <%= link_to 'Sign In', '#', class: "button is-info" %>
           </p>
