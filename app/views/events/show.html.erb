@@ -6,5 +6,11 @@
         <p><%= @event.place%></p>
         <p><%= @event.date%></p>
         <p><%= @event.creator.name%></p>
+        <br>
+        <h3>Guests:</h3>
+        <% @invitation.each do |invite|%>
+        
+        <p><%= invite.attendee.name%></p>
+        <%end%>
     </div>
 </div>
