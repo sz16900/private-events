@@ -1,13 +1,11 @@
-<h1>Log In</h1>
 
-
-<%= flash[:message] %>
-<%= form_for :session, url:login_path do |f|%>
-<%= f.label :user_id, 'User ID'%>
-<%= f.text_field :user_id, class:'form-control' %>
-<!-- %= f.label :password, 'Password' %-->
-<!--%= f.password_field :password, class:'form-control' %-->
-<!--%= f.label :password_confirmation, 'Password confirmation' %-->
-<!--%= f.password_field :password_confirmation, class:'form-control' %-->
-<%= f.submit "Submit", class:'btn btn-primary' %>
-<% end %>
+<div class="section">
+    <div class="container">
+        <h1 class="title">Log In</h1>
+        <%= form_for :session, url:login_path do |f|%>
+        <%= f.label :user_id, 'User ID'%>
+        <%= f.text_field :user_id, class:'form-control' %>
+        <%= f.submit "Submit", class:'btn btn-primary' %>
+        <% end %>
+    </div>
+</div>
