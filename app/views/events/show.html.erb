@@ -8,9 +8,9 @@
         <p><%= @event.creator.name%></p>
         <br>
         <h3>Guests:</h3>
-        <% @invitation.each do |invite|%>
+        <% @event.attendees.each do |invite|%>
         
-        <p><%= invite.attendee.name%></p>
+        <p><%= invite.name%></p>
         <%end%>
     </div>
 </div>

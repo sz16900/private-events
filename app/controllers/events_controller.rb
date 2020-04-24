@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def show
     @event = set_event
-    @invitation = Invitation.all
+    # @invitation = Invitation.all
   end
 
   private
