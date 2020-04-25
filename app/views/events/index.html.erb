@@ -1,16 +1,16 @@
 <div class="section">
     <div class="container">
         <h1 class='title'>Show All Events<h1>
-                <div class="columns is-mobile is-multiline">
+                <div class="tile is-ancestor">
                     <% @event.each do |event|%>
-                    <div class="column has-background-primary">
-                        <a href="<%= event_path(event.id) %>">
-                            <p><%= event.title%> by <%= event.creator.name%></p>
-                            <p><%= event.date%></p>
+                    <div class="tile is-parent">
+                        <a href="<%= event_path(event.id) %>" class="tile is-child box">
+                            <h2 class="title"><%= event.title%></h2>
+                            <p>by</p>
+                            <h2 class="subtitle"><%= event.creator.name%></h2>
+                            <p class="subtitle"><%= event.date%></p>
                         </a>
                     </div>
-                    <br>
-                    <br>
                     <%end%>
                 </div>
     </div>
