@@ -1,20 +1,30 @@
 <div class="section">
   <div class="container">
-    <h1 class='title'> Users Details<h1>
-        <h2 class='subtitle'>
-          Name:
-          <%= @user.name %>
-        </h2>
-        <h2 class='subtitle'>
-          Email:
-          <%= @user.email %>
-        </h2>
+    <div class="columns is-mobile">
+      <div class="column is-11 is-offset-1">
 
-        <h2>Events:</h2>
-        <% @user.attended_events.each do |attend_event| %>
-          <%= attend_event.title %>
-          <br>
-        <% end %> 
+        <div class="tile is-ancestor">
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box has-background-danger">
+              <p class="title">Name:</p>
+              <p><%= @user.name %></p>
+            </div>
+            <div class="tile is-child box has-background-warning">
+              <p class="title">Email:</p>
+              <p><%= @user.email %></p>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-child box has-background-primary">
+              <p class="title">Events:</p>
+              <% @user.attended_events.each do |attend_event| %>
+              <p><%= attend_event.title %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
   </div>
 </div>
