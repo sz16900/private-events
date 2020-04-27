@@ -4,23 +4,23 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(name: 'Example User', email: 'user@example.com')
     @event = Event.new(title: 'Awesome party ya\'ll',
-                          description: 'Gonna be lit',
-                          date: '04-20-2020',
-                          place: 'Kenya',
-                          creator_id: @user.id)
+                       description: 'Gonna be lit',
+                       date: '04-20-2020',
+                       place: 'Kenya',
+                       creator_id: @user.id)
   end
 
-  test "name should not be empty" do
+  test 'name should not be empty' do
     @user.name = ''
     assert_not @user.valid?
   end
 
-  test "email should not be empty" do
+  test 'email should not be empty' do
     @user.email = ''
     assert_not @user.valid?
   end
 
-  test "email should be unique" do
+  test 'email should be unique' do
     @user.save
     duplicate_user = User.create(name: 'Example User', email: 'user@example.com')
     assert_not duplicate_user.valid?
@@ -38,7 +38,6 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     @event.creator_id = @user.id
     @event.save
-    assert Invitation.create(attendee_id: @user.id , attended_event_id: @event.id)
+    assert Invitation.create(attendee_id: @user.id, attended_event_id: @event.id)
   end
-  
 end

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
-
   def setup
     @user = User.create(name: 'Example User', email: 'user@example.com')
   end
@@ -11,5 +10,4 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     post login_path, params: { session: { user_id: @user.id } }
     assert_redirected_to @user
   end
-
 end

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UsersLogoutTest < ActionDispatch::IntegrationTest
-
   def setup
     @user = User.create(name: 'Example User', email: 'user@example.com')
   end
@@ -13,5 +12,4 @@ class UsersLogoutTest < ActionDispatch::IntegrationTest
     delete logout_path
     assert_nil session[:user_id]
   end
-
 end

@@ -1,12 +1,11 @@
 require 'test_helper'
 
 class CreateEventTest < ActionDispatch::IntegrationTest
-
   def setup
     @user = User.create(name: 'Example User',
                         email: 'user@example.com')
   end
-  
+
   test 'valid create event' do
     log_in_as(@user)
     get new_event_path
