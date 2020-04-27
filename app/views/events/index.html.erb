@@ -1,10 +1,10 @@
-<% colors = ['danger', 'primary'] %>
+<% colors = ['danger', 'primary'] %> 
 
 <div class="section">
     <div class="container">
         <h1 class='title'>Show Upcoming Events<h1>
                 <div class="columns is-multiline ">
-                    <% Event.all.upcoming.each do |event|%>
+                    <% @upcoming_events.each do |event|%>
 
                     <div class="column is-4 tile ">
                         <a href="<%= event_path(event.id) %>" class="tile is-child box has-background-primary">
@@ -19,7 +19,7 @@
                 <br>
         <h1 class='title'>Show Previous Events<h1>
                 <div class="columns is-multiline ">
-                    <% Event.all.past.each do |event|%>
+                    <% @past_events.each do |event|%>
 
                     <div class="column is-4 tile ">
                         <a href="<%= event_path(event.id) %>" class="tile is-child box has-background-danger">

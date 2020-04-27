@@ -27,7 +27,7 @@
             <%= link_to 'New Event', new_event_path, class: "button is-info is-inverted" %>
           </p>
             <p class="control">
-              <%= link_to current_user.name, '#', class: "button is-info" %>
+              <%= link_to current_user.name, @user, class: "button is-info" %>
             </p>
             <p class="control">
               <%= link_to 'Logout', logout_path, method: :delete, class: "button is-info" %>
