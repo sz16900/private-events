@@ -3,6 +3,8 @@ class User < ApplicationRecord
     has_many :invitations, foreign_key: :attendee_id
     has_many :attended_events, through: :invitations
 
+    validates :name, :email, presence: true
+
     def upcoming_events
         attended_events.where('date > date(\'now\')')
     end
