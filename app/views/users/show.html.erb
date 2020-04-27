@@ -16,10 +16,20 @@
           </div>
           <div class="tile is-parent">
             <div class="tile is-child box has-background-primary">
-              <p class="title">Events:</p>
-              <% @user.attended_events.each do |attend_event| %>
-              <p><%= attend_event.title %></p>
-              <p><%= attend_event.date %></p>
+              <p class="title">Upcoming events:</p>
+              <% @user.upcoming_events.each do |upcoming_event| %>
+                <a href="<%= event_path(upcoming_event) %>">  
+                 <h3><%= upcoming_event.title %>
+                  <a><%= upcoming_event.date.to_date %></a></h3>
+                </a>
+              <% end %>
+              <br>
+              <p class="title">Previous events:</p>
+              <% @user.previous_events.each do |previous_event| %>
+                <a href="<%= event_path(previous_event) %>">  
+                  <h3><%= previous_event.title %>
+                   <a><%= previous_event.date.to_date %></a></h3>
+               </a>
               <% end %>
             </div>
           </div>
@@ -29,13 +39,3 @@
     </div>
   </div>
 </div>
-
-<h2> Upcoming events </h2>
-<% @user.upcoming_events.each do |upcoming_event| %>
-  <a href="<%= event_path(upcoming_event) %>">  
-    <h3><%= upcoming_event.title %>
-    <a><%= upcoming_event.date.to_date %></a></h3>
-  </a>
-<% end %>
-
-

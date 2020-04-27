@@ -6,4 +6,8 @@ class User < ApplicationRecord
     def upcoming_events
         attended_events.where('date > date(\'now\')')
     end
+
+    def previous_events
+        attended_events.where('date < date(\'now\')')
+    end
 end
