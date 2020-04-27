@@ -19,6 +19,7 @@
               <p class="title">Events:</p>
               <% @user.attended_events.each do |attend_event| %>
               <p><%= attend_event.title %></p>
+              <p><%= attend_event.date %></p>
               <% end %>
             </div>
           </div>
@@ -28,3 +29,13 @@
     </div>
   </div>
 </div>
+
+<h2> Upcoming events </h2>
+<% @user.upcoming_events.each do |upcoming_event| %>
+  <a href="<%= event_path(upcoming_event) %>">  
+    <h3><%= upcoming_event.title %>
+    <a><%= upcoming_event.date.to_date %></a></h3>
+  </a>
+<% end %>
+
+

@@ -1,11 +1,14 @@
+<% colors = ['danger', 'primary'] %>
+
 <div class="section">
     <div class="container">
         <h1 class='title'>Show All Events<h1>
-                <div class="tile is-ancestor">
+                <div class="columns is-multiline ">
                     <% @event.each do |event|%>
-                    <div class="tile is-parent">
-                        <a href="<%= event_path(event.id) %>" class="tile is-child box">
-                            <h2 class="title"><%= event.title%></h2>
+
+                    <div class="column is-4 tile ">
+                        <a href="<%= event_path(event.id) %>" class="tile is-child box has-background-primary">
+                            <h2 class="title "><%= event.title%></h2>
                             <p>by</p>
                             <h2 class="subtitle"><%= event.creator.name%></h2>
                             <p class="subtitle"><%= event.date%></p>
