@@ -21,11 +21,11 @@
       <div class="navbar-end">
         <div class="navbar-item">
         <div class="field is-grouped">
+
+          <% if signed_in? %>
           <p class="control">
             <%= link_to 'New Event', new_event_path, class: "button is-info is-inverted" %>
           </p>
-
-          <% if signed_in? %>
             <p class="control">
               <%= link_to current_user.name, '#', class: "button is-info" %>
             </p>
@@ -33,6 +33,9 @@
               <%= link_to 'Logout', logout_path, method: :delete, class: "button is-info" %>
             </p>
           <% else %>
+          <p class="control">
+            <%= link_to 'New Event', login_path, class: "button is-info is-inverted" %>
+          </p>
             <p class="control">
               <%= link_to 'Sign In', login_path, class: "button is-info" %>
             </p>
