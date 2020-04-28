@@ -1,0 +1,43 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-mobile">
+      <div class="column is-half is-offset-one-quarter">
+
+        <h1 class='title'>Sign up</h1>
+
+        <%= form_for @user do |form| %>
+        <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :name, class: "label" %>
+          <div class="control">
+            <%= form.text_field :name, class: "input is-primary is-rounded"%>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :email, class: "label" %>
+          <div class="control">
+            <%= form.text_field :email, class: "input is-primary is-rounded" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= form.submit :class => "button is-primary" %>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

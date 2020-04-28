@@ -1,0 +1,41 @@
+<div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+
+    <h1 class="title">Create a new Event</h1>
+
+    <%= form_for @event do |form| %>
+    <div class="field">
+      <%= form.label :title, class: "label"  %>
+      <div class="control">
+        <%= form.text_field :title, class: "input is-primary is-rounded" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :date, class: "label"  %>
+      <div class="control">
+        <%= form.date_field :date, class: "input is-primary is-rounded" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :place, class: "label"  %>
+      <div class="control">
+        <%= form.text_field :place, class: "input is-primary is-rounded" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :description, class: "label"  %>
+      <div class="control">
+        <%= form.text_field :description, class: "input is-primary is-rounded" %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit :class => "button is-primary" %>
+    </div>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-mobile">
+      <div class="column is-11 is-offset-1">
+        
+        
+        <h1 class='title'><%= @event.title %><h1>
+        <div class="tile is-ancestor">
+        <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box has-background-danger">
+            <p class="title">Description:</p>
+            <p><%= @event.description%></p>
+            </div>
+            <div class="tile is-child box has-background-info">
+            <p class="title">Place:</p>
+            <p><%= @event.place%></p>
+            </div>
+            <div class="tile is-child box has-background-warning">
+            <p class="title">Date:</p>
+            <p><%= @event.date%></p>
+            </div>
+            <div class="tile is-child box has-background-link">
+            <p class="title">Host:</p>
+            <p><%= @event.creator.name%></p>
+            </div>
+        </div>
+        <div class="tile is-parent">
+            <div class="tile is-child box has-background-primary">
+            <p class="title">Guests:</p>
+                <% @event.attendees.each do |invite|%>
+                <p><%= invite.name%></p>
+                <%end%>
+            </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

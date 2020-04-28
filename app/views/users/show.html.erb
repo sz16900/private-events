@@ -1,0 +1,49 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-mobile">
+      <div class="column is-11 is-offset-1">
+
+        <div class="tile is-ancestor">
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box has-background-danger">
+              <p class="title">Name:</p>
+              <p><%= @user.name %></p>
+            </div>
+            <div class="tile is-child box has-background-warning">
+              <p class="title">Email:</p>
+              <p><%= @user.email %></p>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-child box has-background-primary">
+              <p class="title">Upcoming Events:</p>
+              <% @upcoming_events.each do |upcoming_event| %>
+                <a href="<%= event_path(upcoming_event) %>">  
+                 <h3><%= upcoming_event.title %>
+                  <a><%= upcoming_event.date.to_date %></a></h3>
+                </a>
+              <% end %>
+              <br>
+              <p class="title">Previous Events:</p>
+              <% @previous_events.each do |previous_event| %>
+                <a href="<%= event_path(previous_event) %>">  
+                  <h3><%= previous_event.title %>
+                   <a><%= previous_event.date.to_date %></a></h3>
+               </a>
+              <% end %>
+              <br>
+              <p class="title">Created Events:</p>
+              <% @created_events.each do |created_event| %>
+                <a href="<%= event_path(created_event) %>">  
+                  <h3><%= created_event.title %>
+                   <a><%= created_event.date.to_date %></a></h3>
+               </a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

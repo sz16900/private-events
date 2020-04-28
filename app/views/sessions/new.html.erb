@@ -1,0 +1,23 @@
+<div class="section">
+    <div class="container">
+        <div class="columns is-mobile">
+            <div class="column is-half is-offset-one-quarter">
+
+                <h1 class="title">Log In</h1>
+                <%= form_for :session, url:login_path do |f|%>
+
+                <div class="field">
+                    <%= f.label :user_id, 'User ID', class: "label"%>
+                    <div class="control">
+                        <%= f.text_field :user_id, class: "form-control input is-primary is-rounded" %>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <%= f.submit :class => "button is-primary" %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

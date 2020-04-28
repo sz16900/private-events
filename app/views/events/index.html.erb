@@ -1,0 +1,35 @@
+<% colors = ['danger', 'primary'] %> 
+
+<div class="section">
+    <div class="container">
+        <h1 class='title'>Show Upcoming Events<h1>
+                <div class="columns is-multiline ">
+                    <% @upcoming_events.each do |event|%>
+
+                    <div class="column is-4 tile ">
+                        <a href="<%= event_path(event.id) %>" class="tile is-child box has-background-primary">
+                            <h2 class="title "><%= event.title%></h2>
+                            <p>by</p>
+                            <h2 class="subtitle"><%= event.creator.name%></h2>
+                            <p class="subtitle"><%= event.date%></p>
+                        </a>
+                    </div>
+                    <%end%>
+                </div>
+                <br>
+        <h1 class='title'>Show Previous Events<h1>
+                <div class="columns is-multiline ">
+                    <% @past_events.each do |event|%>
+
+                    <div class="column is-4 tile ">
+                        <a href="<%= event_path(event.id) %>" class="tile is-child box has-background-danger">
+                            <h2 class="title "><%= event.title%></h2>
+                            <p>by</p>
+                            <h2 class="subtitle"><%= event.creator.name%></h2>
+                            <p class="subtitle"><%= event.date%></p>
+                        </a>
+                    </div>
+                    <%end%>
+                </div>
+    </div>
+</div>
