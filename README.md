@@ -1,6 +1,6 @@
 # private-events
 
-A site similar to a private Eventbrite which allows users to create events and then manage user signups. Users can create events and send invitations and parties. Events take place at a specific date and at a location (which you can just store as a string, like “Andy’s House”).
+This site is similar to a private Eventbrite which allows users to create events and then manage user signups. Users can create events and send invitations and parties. Events take place at a specific date and at a location (which you can just store as a string, like “Andy’s House”).
 Written in Ruby in partial fulfillment of the Microverse Curriculum.
 
 ---
@@ -37,10 +37,10 @@ When you have installed Ruby on your computer, clone the project. You can do thi
 
 ## Running Server
 
-* Go to main folder: cd private-events
-* On terminal, type rails server 
-* Go ahead and open up your favorite Browser and type address prompted by termial (i.e: localhost:3000)
-* Pro tip: If you want to checkout the list of users, go ahead and type localhost:3000/users in your Browser search bar
+* Go to main folder: cd private-events.
+* On the terminal, type rails server .
+* Go ahead and open up your favorite browser and type address prompted by the terminal (i.e: localhost:3000).
+* Pro tip: If you want to check out the list of users, go ahead and type localhost:3000/users in your Browser search bar.
 
 
 ---
